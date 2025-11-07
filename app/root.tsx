@@ -7,6 +7,8 @@ import {
   ScrollRestoration,
 } from "react-router";
 
+import { StrictMode } from 'react';
+
 import type { Route } from "./+types/root";
 import "./app.css";
 
@@ -25,6 +27,7 @@ export const links: Route.LinksFunction = () => [
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
+    <StrictMode>
     <html lang="en">
       <head>
         <meta charSet="utf-8" />
@@ -38,6 +41,8 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Scripts />
       </body>
     </html>
+    </StrictMode>
+
   );
 }
 
